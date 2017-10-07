@@ -82,7 +82,7 @@ AppAsset::register($this);
             <li>
               <a href="/">首页</a></li>
             <li>
-              <a href="<?= Url::to(['site/screen']) ?>">电影</a></li>
+              <a href="<?= Url::to(['screen/index']) ?>">电影</a></li>
             <li>
               <a href="http://www.btbtdy.com/btfl/dy30.html">电视剧</a></li>
             <li>
@@ -92,15 +92,15 @@ AppAsset::register($this);
             <li>
               <a href="http://www.btbtdy.com/btfl/dy28.html">3D电影</a></li>
             <li>
-              <a href="http://www.btbtdy.com/new/">最新</a></li>
+              <a href="<?= Url::to(['tag/new']) ?>">最新</a></li>
             <li>
-              <a href="http://www.btbtdy.com/hot/">排行</a></li>
+              <a href="<?= Url::to(['tag/hot']) ?>">排行</a></li>
             <li>
               <a href="http://www.btbtdy.com/previews.html#today">更新表</a></li>
             <li>
-              <a href="http://www.btbtdy.com/topic/">专题</a></li>
+              <a href="<?= Url::to(['tag/topic']) ?>">专题</a></li>
             <li>
-              <a href="http://www.btbtdy.com/yun/">云点播</a></li>
+              <a href="<?= Url::to(['tag/yun']) ?>">云点播</a></li>
             <li>
               <a href="http://www.btbtdy.com/#" class="big-link" data-reveal-id="myModal" data-animation="none">备用域名</a></li>
             <li id="ad">

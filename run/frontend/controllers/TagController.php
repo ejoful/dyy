@@ -11,7 +11,7 @@ use yii\filters\AccessControl;
 /**
  * Site controller
  */
-class DownController extends Controller
+class TagController extends Controller
 {
     /**
      * @inheritdoc
