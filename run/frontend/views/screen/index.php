@@ -1,16 +1,30 @@
 <?php
 
+use yii\helpers\Url;
+use yii\widgets\LinkPager;
 /* @var $this yii\web\View */
 
 $this->title = 'BT电影天堂-迅雷BT种子下载|高清电影下载';
+echo $query_str = Yii::$app->getRequest()->queryString;
+$params = explode('&', $query_str);
+// print_r($params);
+
+
+parse_str($query_str, $query_arr);
+// echo '<pre>';
+// // print_r($query_arr);
+// echo '</pre>';
+// print_r($query_arr['FilmSearch']["'category'"]);
+// die();
 ?>
+
 <div class="list">
   <div class="s_index">
     <dl>
       <dt>选择类型：</dt>
       <dd>
-        <a target="_self" href="/screen/0--2017---time-1.html">全部</a>
-        <a class="current" target="_self" href="/screen/1--2017---time-1.html">电影</a>
+        <a class="current" target="_self" href="<?= Url::to(['screen/index',"FilmSearch['type']" => '',"FilmSearch['category']" => $query_arr['FilmSearch']["'category'"]]) ?>">全部</a>
+        <a target="_self" href="<?= Url::to(['screen/index',"FilmSearch['type']" => '电影',"FilmSearch['category']" => $query_arr['FilmSearch']["'category'"]]) ?>">电影</a>
         <a target="_self" href="/screen/30--2017---time-1.html">电视剧</a>
         <a target="_self" href="/screen/34--2017---time-1.html">动漫</a>
         <a target="_self" href="/screen/29--2017---time-1.html">蓝光原盘</a>
@@ -128,451 +142,37 @@ $this->title = 'BT电影天堂-迅雷BT种子下载|高清电影下载';
     <div class="dtop">筛选结果：共
       <span>480</span>条数据</div></div>
   <ul>
-    <li>
-      <div class="liimg">
-        <a class="pic_link" href="/btdy/dy11517.html" title="生存家族" target="_blank">
-          <img class="lazy" data-src="http://gif-china.cc/uploads/allimg/201709/e0540cbb86cff047.jpg?h=190" alt="生存家族" src="http://gif-china.cc/uploads/allimg/201709/e0540cbb86cff047.jpg?h=190" style="display: inline;">
-          <span>高清</span></a>
-      </div>
-      <div class="cts_ms">
-        <p class="title">
-          <a href="/btdy/dy11517.html" title="生存家族" target="_blank">生存家族</a>
-          <span>8.1</span></p>
-        <p class="des">2017年 日本 喜剧,家庭</p></div>
-    </li>
-    <li>
-      <div class="liimg">
-        <a class="pic_link" href="/btdy/dy11514.html" title="大护法" target="_blank">
-          <img class="lazy" data-src="http://gif-china.cc/uploads/allimg/201709/de4852ff1ead5b2f.jpg?h=190" alt="大护法" src="http://gif-china.cc/uploads/allimg/201709/de4852ff1ead5b2f.jpg?h=190" style="display: inline;">
-          <span>标清</span></a>
-      </div>
-      <div class="cts_ms">
-        <p class="title">
-          <a href="/btdy/dy11514.html" title="大护法" target="_blank">大护法</a>
-          <span>7.9</span></p>
-        <p class="des">2017年 大陆 喜剧,奇幻,动画,冒险</p></div>
-    </li>
-    <li>
-      <div class="liimg">
-        <a class="pic_link" href="/btdy/dy11510.html" title="秘果" target="_blank">
-          <img class="lazy" data-src="http://gif-china.cc/uploads/allimg/201709/d1ca25133f1aec15.jpg?h=190" alt="秘果" src="http://gif-china.cc/uploads/allimg/201709/d1ca25133f1aec15.jpg?h=190" style="display: inline;">
-          <span>标清</span></a>
-      </div>
-      <div class="cts_ms">
-        <p class="title">
-          <a href="/btdy/dy11510.html" title="秘果" target="_blank">秘果</a>
-          <span>5.0</span></p>
-        <p class="des">2017年 大陆 爱情</p></div>
-    </li>
-    <li>
-      <div class="liimg">
-        <a class="pic_link" href="/btdy/dy11509.html" title="疯狂修道院" target="_blank">
-          <img class="lazy" data-src="http://gif-china.cc/uploads/allimg/201709/fbc9ea251b1de3ce.jpg?h=190" alt="疯狂修道院" src="http://gif-china.cc/uploads/allimg/201709/fbc9ea251b1de3ce.jpg?h=190" style="display: inline;">
-          <span>标清</span></a>
-      </div>
-      <div class="cts_ms">
-        <p class="title">
-          <a href="/btdy/dy11509.html" title="疯狂修道院" target="_blank">疯狂修道院</a>
-          <span>6.0</span></p>
-        <p class="des">2017年 欧美 喜剧</p></div>
-    </li>
-    <li>
-      <div class="liimg">
-        <a class="pic_link" href="/btdy/dy11508.html" title="最后的疯狂" target="_blank">
-          <img class="lazy" data-src="http://gif-china.cc/uploads/allimg/201709/0b42d77de01ca9ca.jpg?h=190" alt="最后的疯狂" src="http://gif-china.cc/uploads/allimg/201709/0b42d77de01ca9ca.jpg?h=190" style="display: inline;">
-          <span>标清</span></a>
-      </div>
-      <div class="cts_ms">
-        <p class="title">
-          <a href="/btdy/dy11508.html" title="最后的疯狂" target="_blank">最后的疯狂</a>
-          <span>0.0</span></p>
-        <p class="des">2017年 欧美 剧情</p></div>
-    </li>
-    <li>
-      <div class="liimg">
-        <a class="pic_link" href="/btdy/dy11507.html" title="杀死冈瑟" target="_blank">
-          <img class="lazy" data-src="http://gif-china.cc/uploads/allimg/201709/ba1f49f0f511e60a.jpg?h=190" alt="杀死冈瑟" src="http://gif-china.cc/uploads/allimg/201709/ba1f49f0f511e60a.jpg?h=190" style="display: inline;">
-          <span>标清</span></a>
-      </div>
-      <div class="cts_ms">
-        <p class="title">
-          <a href="/btdy/dy11507.html" title="杀死冈瑟" target="_blank">杀死冈瑟</a>
-          <span>0.0</span></p>
-        <p class="des">2017年 欧美 动作,喜剧</p></div>
-    </li>
-    <li>
-      <div class="liimg">
-        <a class="pic_link" href="/btdy/dy11506.html" title="快乐猎杀" target="_blank">
-          <img class="lazy" data-src="http://gif-china.cc/uploads/allimg/201709/88538e2ea3e99997.jpg?h=190" alt="快乐猎杀" src="http://gif-china.cc/uploads/allimg/201709/88538e2ea3e99997.jpg?h=190" style="display: inline;">
-          <span>标清</span></a>
-      </div>
-      <div class="cts_ms">
-        <p class="title">
-          <a href="/btdy/dy11506.html" title="快乐猎杀" target="_blank">快乐猎杀</a>
-          <span>6.0</span></p>
-        <p class="des">2017年 欧美 恐怖</p></div>
-    </li>
-    <li>
-      <div class="liimg">
-        <a class="pic_link" href="/btdy/dy11504.html" title="喵星人" target="_blank">
-          <img class="lazy" data-src="http://gif-china.cc/uploads/allimg/201709/9efba3b7f940e92b.jpg?h=190" alt="喵星人" src="http://gif-china.cc/uploads/allimg/201709/9efba3b7f940e92b.jpg?h=190" style="display: inline;">
-          <span>高清</span></a>
-      </div>
-      <div class="cts_ms">
-        <p class="title">
-          <a href="/btdy/dy11504.html" title="喵星人" target="_blank">喵星人</a>
-          <span>4.3</span></p>
-        <p class="des">2017年 香港 喜剧,奇幻</p></div>
-    </li>
-    <li>
-      <div class="liimg">
-        <a class="pic_link" href="/btdy/dy11503.html" title="闪光少女" target="_blank">
-          <img class="lazy" data-src="http://gif-china.cc/uploads/allimg/201709/d00fce7c970a3d83.jpg?h=190" alt="闪光少女" src="http://gif-china.cc/uploads/allimg/201709/d00fce7c970a3d83.jpg?h=190" style="display: inline;">
-          <span>标清</span></a>
-      </div>
-      <div class="cts_ms">
-        <p class="title">
-          <a href="/btdy/dy11503.html" title="闪光少女" target="_blank">闪光少女</a>
-          <span>7.5</span></p>
-        <p class="des">2017年 大陆 喜剧,音乐</p></div>
-    </li>
-    <li>
-      <div class="liimg">
-        <a class="pic_link" href="/btdy/dy11500.html" title="棋手" target="_blank">
-          <img class="lazy" data-src="http://gif-china.cc/uploads/allimg/201709/aad7e20898febc2e.jpg?h=190" alt="棋手" src="http://gif-china.cc/uploads/allimg/201709/aad7e20898febc2e.jpg?h=190" style="display: inline;">
-          <span>高清</span></a>
-      </div>
-      <div class="cts_ms">
-        <p class="title">
-          <a href="/btdy/dy11500.html" title="棋手" target="_blank">棋手</a>
-          <span>6.1</span></p>
-        <p class="des">2017年 欧美 剧情</p></div>
-    </li>
-    <li>
-      <div class="liimg">
-        <a class="pic_link" href="/btdy/dy11499.html" title="V.I.P." target="_blank">
-          <img class="lazy" data-src="http://gif-china.cc/uploads/allimg/201709/752d894f45f696b4.jpg?h=190" alt="V.I.P." src="http://gif-china.cc/uploads/allimg/201709/752d894f45f696b4.jpg?h=190" style="display: inline;">
-          <span>高清</span></a>
-      </div>
-      <div class="cts_ms">
-        <p class="title">
-          <a href="/btdy/dy11499.html" title="V.I.P." target="_blank">V.I.P.</a>
-          <span>6.5</span></p>
-        <p class="des">2017年 韩国 动作,犯罪</p></div>
-    </li>
-    <li>
-      <div class="liimg">
-        <a class="pic_link" href="/btdy/dy11498.html" title="极寒之城" target="_blank">
-          <img class="lazy" data-src="http://gif-china.cc/uploads/allimg/201709/5e415d31a3e85da0.jpg?h=190" alt="极寒之城" src="http://gif-china.cc/uploads/allimg/201709/5e415d31a3e85da0.jpg?h=190" style="display: inline;">
-          <span>抢先版</span></a>
-      </div>
-      <div class="cts_ms">
-        <p class="title">
-          <a href="/btdy/dy11498.html" title="极寒之城" target="_blank">极寒之城</a>
-          <span>7.2</span></p>
-        <p class="des">2017年 欧美 动作,惊悚,悬疑</p></div>
-    </li>
-    <li>
-      <div class="liimg">
-        <a class="pic_link" href="/btdy/dy11497.html" title="半条命" target="_blank">
-          <img class="lazy" data-src="http://gif-china.cc/uploads/allimg/201709/4412899a6d88d701.jpg?h=190" alt="半条命" src="http://gif-china.cc/uploads/allimg/201709/4412899a6d88d701.jpg?h=190" style="display: inline;">
-          <span>高清</span></a>
-      </div>
-      <div class="cts_ms">
-        <p class="title">
-          <a href="/btdy/dy11497.html" title="半条命" target="_blank">半条命</a>
-          <span>4.2</span></p>
-        <p class="des">2017年 欧美 科幻,惊悚</p></div>
-    </li>
-    <li>
-      <div class="liimg">
-        <a class="pic_link" href="/btdy/dy11496.html" title="黑雪" target="_blank">
-          <img class="lazy" data-src="http://gif-china.cc/uploads/allimg/201709/0cde6433edffb0cb.jpg?h=190" alt="黑雪" src="http://gif-china.cc/uploads/allimg/201709/0cde6433edffb0cb.jpg?h=190" style="display: inline;">
-          <span>高清</span></a>
-      </div>
-      <div class="cts_ms">
-        <p class="title">
-          <a href="/btdy/dy11496.html" title="黑雪" target="_blank">黑雪</a>
-          <span>6.2</span></p>
-        <p class="des">2017年 欧美 剧情</p></div>
-    </li>
-    <li>
-      <div class="liimg">
-        <a class="pic_link" href="/btdy/dy11493.html" title="夜色撩人" target="_blank">
-          <img class="lazy" data-src="http://gif-china.cc/uploads/allimg/201709/d9b3a4b2ae5b1f08.jpg?h=190" alt="夜色撩人" src="http://gif-china.cc/uploads/allimg/201709/d9b3a4b2ae5b1f08.jpg?h=190" style="display: inline;">
-          <span>标清</span></a>
-      </div>
-      <div class="cts_ms">
-        <p class="title">
-          <a href="/btdy/dy11493.html" title="夜色撩人" target="_blank">夜色撩人</a>
-          <span>4.9</span></p>
-        <p class="des">2017年 大陆 剧情,悬疑,犯罪</p></div>
-    </li>
-    <li>
-      <div class="liimg">
-        <a class="pic_link" href="/btdy/dy11490.html" title="亨利之书" target="_blank">
-          <img class="lazy" data-src="http://gif-china.cc/uploads/allimg/201709/491d46281f12b986.jpg?h=190" alt="亨利之书" src="http://gif-china.cc/uploads/allimg/201709/491d46281f12b986.jpg?h=190" style="display: inline;">
-          <span>高清</span></a>
-      </div>
-      <div class="cts_ms">
-        <p class="title">
-          <a href="/btdy/dy11490.html" title="亨利之书" target="_blank">亨利之书</a>
-          <span>6.0</span></p>
-        <p class="des">2017年 欧美 剧情,惊悚</p></div>
-    </li>
-    <li>
-      <div class="liimg">
-        <a class="pic_link" href="/btdy/dy11489.html" title="密室逃脱" target="_blank">
-          <img class="lazy" data-src="http://gif-china.cc/uploads/allimg/201709/77875c0a5285f599.jpg?h=190" alt="密室逃脱" src="http://gif-china.cc/uploads/allimg/201709/77875c0a5285f599.jpg?h=190" style="display: inline;">
-          <span>高清</span></a>
-      </div>
-      <div class="cts_ms">
-        <p class="title">
-          <a href="/btdy/dy11489.html" title="密室逃脱" target="_blank">密室逃脱</a>
-          <span>5.3</span></p>
-        <p class="des">2017年 欧美 剧情</p></div>
-    </li>
-    <li>
-      <div class="liimg">
-        <a class="pic_link" href="/btdy/dy11488.html" title="重返17岁" target="_blank">
-          <img class="lazy" data-src="http://gif-china.cc/uploads/allimg/201709/1ed138657e184e1a.jpg?h=190" alt="重返17岁" src="http://gif-china.cc/uploads/allimg/201709/1ed138657e184e1a.jpg?h=190" style="display: inline;">
-          <span>高清</span></a>
-      </div>
-      <div class="cts_ms">
-        <p class="title">
-          <a href="/btdy/dy11488.html" title="重返17岁" target="_blank">重返17岁</a>
-          <span>6.7</span></p>
-        <p class="des">2017年 日本 喜剧,爱情,剧情</p></div>
-    </li>
-    <li>
-      <div class="liimg">
-        <a class="pic_link" href="/btdy/dy11487.html" title="鬼魅浮生" target="_blank">
-          <img class="lazy" data-src="http://gif-china.cc/uploads/allimg/201709/8ba383a257ad33d7.jpg?h=190" alt="鬼魅浮生" src="http://gif-china.cc/uploads/allimg/201709/8ba383a257ad33d7.jpg?h=190" style="display: inline;">
-          <span>高清</span></a>
-      </div>
-      <div class="cts_ms">
-        <p class="title">
-          <a href="/btdy/dy11487.html" title="鬼魅浮生" target="_blank">鬼魅浮生</a>
-          <span>8.0</span></p>
-        <p class="des">2017年 欧美 爱情,剧情,奇幻</p></div>
-    </li>
-    <li>
-      <div class="liimg">
-        <a class="pic_link" href="/btdy/dy11486.html" title="反转人生" target="_blank">
-          <img class="lazy" data-src="http://gif-china.cc/uploads/allimg/201709/c20bec8ea56668af.jpg?h=190" alt="反转人生" src="http://gif-china.cc/uploads/allimg/201709/c20bec8ea56668af.jpg?h=190" style="display: inline;">
-          <span>标清</span></a>
-      </div>
-      <div class="cts_ms">
-        <p class="title">
-          <a href="/btdy/dy11486.html" title="反转人生" target="_blank">反转人生</a>
-          <span>5.5</span></p>
-        <p class="des">2017年 大陆 喜剧,奇幻</p></div>
-    </li>
-    <li>
-      <div class="liimg">
-        <a class="pic_link" href="/btdy/dy11476.html" title="艾莉丝是谁" target="_blank">
-          <img class="lazy" data-src="http://gif-china.cc/uploads/allimg/201709/e2b35f602f4d5d7f.jpg?h=190" alt="艾莉丝是谁" src="http://gif-china.cc/uploads/allimg/201709/e2b35f602f4d5d7f.jpg?h=190" style="display: inline;">
-          <span>标清</span></a>
-      </div>
-      <div class="cts_ms">
-        <p class="title">
-          <a href="/btdy/dy11476.html" title="艾莉丝是谁" target="_blank">艾莉丝是谁</a>
-          <span>7.0</span></p>
-        <p class="des">2017年 Netherland 喜剧</p></div>
-    </li>
-    <li>
-      <div class="liimg">
-        <a class="pic_link" href="/btdy/dy11475.html" title="罗马假日" target="_blank">
-          <img class="lazy" data-src="http://gif-china.cc/uploads/allimg/201709/f7d9c35d1203f07c.jpg?h=190" alt="罗马假日" src="http://gif-china.cc/uploads/allimg/201709/f7d9c35d1203f07c.jpg?h=190" style="display: inline;">
-          <span>标清</span></a>
-      </div>
-      <div class="cts_ms">
-        <p class="title">
-          <a href="/btdy/dy11475.html" title="罗马假日" target="_blank">罗马假日</a>
-          <span>0.0</span></p>
-        <p class="des">2017年 韩国 喜剧</p></div>
-    </li>
-    <li>
-      <div class="liimg">
-        <a class="pic_link" href="/btdy/dy11474.html" title="啦啦队之舞" target="_blank">
-          <img class="lazy" data-src="http://gif-china.cc/uploads/allimg/201709/eb7a45abf0967e2b.jpg?h=190" alt="啦啦队之舞" src="http://gif-china.cc/uploads/allimg/201709/eb7a45abf0967e2b.jpg?h=190" style="display: inline;">
-          <span>高清</span></a>
-      </div>
-      <div class="cts_ms">
-        <p class="title">
-          <a href="/btdy/dy11474.html" title="啦啦队之舞" target="_blank">啦啦队之舞</a>
-          <span>6.7</span></p>
-        <p class="des">2017年 日本 喜剧,歌舞</p></div>
-    </li>
-    <li>
-      <div class="liimg">
-        <a class="pic_link" href="/btdy/dy11473.html" title="他们先杀了我父亲：一个柬埔寨女儿的回忆录" target="_blank">
-          <img class="lazy" data-src="http://gif-china.cc/uploads/allimg/201709/a9d30740027b8822.jpg?h=190" alt="他们先杀了我父亲：一个柬埔寨女儿的回忆录" src="http://gif-china.cc/uploads/allimg/201709/a9d30740027b8822.jpg?h=190" style="display: inline;">
-          <span>标清</span></a>
-      </div>
-      <div class="cts_ms">
-        <p class="title">
-          <a href="/btdy/dy11473.html" title="他们先杀了我父亲：一个柬埔寨女儿的回忆录" target="_blank">他们先杀了我父亲：一个柬埔寨女儿的回忆录</a>
-          <span>7.0</span></p>
-        <p class="des">2017年 欧美 剧情,传记,历史</p></div>
-    </li>
-    <li>
-      <div class="liimg">
-        <a class="pic_link" href="/btdy/dy11472.html" title="P与JK" target="_blank">
-          <img class="lazy" data-src="http://gif-china.cc/uploads/allimg/201709/0a6fafe456c21419.jpg?h=190" alt="P与JK" src="http://gif-china.cc/uploads/allimg/201709/0a6fafe456c21419.jpg?h=190" style="display: inline;">
-          <span>高清</span></a>
-      </div>
-      <div class="cts_ms">
-        <p class="title">
-          <a href="/btdy/dy11472.html" title="P与JK" target="_blank">P与JK</a>
-          <span>5.3</span></p>
-        <p class="des">2017年 日本 喜剧,爱情</p></div>
-    </li>
-    <li>
-      <div class="liimg">
-        <a class="pic_link" href="/btdy/dy11471.html" title="新无主之花" target="_blank">
-          <img class="lazy" data-src="http://gif-china.cc/uploads/allimg/201709/1bf1b1a986cc2314.jpg?h=190" alt="新无主之花" src="http://gif-china.cc/uploads/allimg/201709/1bf1b1a986cc2314.jpg?h=190" style="display: inline;">
-          <span>标清</span></a>
-      </div>
-      <div class="cts_ms">
-        <p class="title">
-          <a href="/btdy/dy11471.html" title="新无主之花" target="_blank">新无主之花</a>
-          <span>3.0</span></p>
-        <p class="des">2017年 韩国 爱情,剧情,情色</p></div>
-    </li>
-    <li>
-      <div class="liimg">
-        <a class="pic_link" href="/btdy/dy11470.html" title="青年警察" target="_blank">
-          <img class="lazy" data-src="http://gif-china.cc/uploads/allimg/201709/3575b5976dbf64a5.jpg?h=190" alt="青年警察" src="http://gif-china.cc/uploads/allimg/201709/3575b5976dbf64a5.jpg?h=190" style="display: inline;">
-          <span>标清</span></a>
-      </div>
-      <div class="cts_ms">
-        <p class="title">
-          <a href="/btdy/dy11470.html" title="青年警察" target="_blank">青年警察</a>
-          <span>7.2</span></p>
-        <p class="des">2017年 韩国 动作,喜剧</p></div>
-    </li>
-    <li>
-      <div class="liimg">
-        <a class="pic_link" href="/btdy/dy11469.html" title="苌山虎" target="_blank">
-          <img class="lazy" data-src="http://gif-china.cc/uploads/allimg/201709/996a7833e39755fd.jpg?h=190" alt="苌山虎" src="http://gif-china.cc/uploads/allimg/201709/996a7833e39755fd.jpg?h=190" style="display: inline;">
-          <span>标清</span></a>
-      </div>
-      <div class="cts_ms">
-        <p class="title">
-          <a href="/btdy/dy11469.html" title="苌山虎" target="_blank">苌山虎</a>
-          <span>0.0</span></p>
-        <p class="des">2017年 韩国 剧情,恐怖</p></div>
-    </li>
-    <li>
-      <div class="liimg">
-        <a class="pic_link" href="/btdy/dy11468.html" title="这是你的死亡" target="_blank">
-          <img class="lazy" data-src="http://gif-china.cc/uploads/allimg/201709/f616e5eab6d039fa.jpg?h=190" alt="这是你的死亡" src="http://gif-china.cc/uploads/allimg/201709/f616e5eab6d039fa.jpg?h=190" style="display: inline;">
-          <span>标清</span></a>
-      </div>
-      <div class="cts_ms">
-        <p class="title">
-          <a href="/btdy/dy11468.html" title="这是你的死亡" target="_blank">这是你的死亡</a>
-          <span>7.5</span></p>
-        <p class="des">2017年 欧美 剧情</p></div>
-    </li>
-    <li>
-      <div class="liimg">
-        <a class="pic_link" href="/btdy/dy11467.html" title="明月几时有" target="_blank">
-          <img class="lazy" data-src="http://gif-china.cc/uploads/allimg/201709/40007f7b659fb275.jpg?h=190" alt="明月几时有" src="http://gif-china.cc/uploads/allimg/201709/40007f7b659fb275.jpg?h=190" style="display: inline;">
-          <span>高清</span></a>
-      </div>
-      <div class="cts_ms">
-        <p class="title">
-          <a href="/btdy/dy11467.html" title="明月几时有" target="_blank">明月几时有</a>
-          <span>7.0</span></p>
-        <p class="des">2017年 大陆 剧情,战争,历史</p></div>
-    </li>
-    <li>
-      <div class="liimg">
-        <a class="pic_link" href="/btdy/dy11460.html" title="安娜贝尔2：诞生" target="_blank">
-          <img class="lazy" data-src="http://gif-china.cc/uploads/allimg/201709/c7d814f6860cd95a.jpg?h=190" alt="安娜贝尔2：诞生" src="http://gif-china.cc/uploads/allimg/201709/c7d814f6860cd95a.jpg?h=190" style="display: inline;">
-          <span>韩版</span></a>
-      </div>
-      <div class="cts_ms">
-        <p class="title">
-          <a href="/btdy/dy11460.html" title="安娜贝尔2：诞生" target="_blank">安娜贝尔2：诞生</a>
-          <span>6.8</span></p>
-        <p class="des">2017年 欧美 惊悚,恐怖,悬疑</p></div>
-    </li>
-    <li>
-      <div class="liimg">
-        <a class="pic_link" href="/btdy/dy11459.html" title="人生密密缝" target="_blank">
-          <img class="lazy" data-src="http://gif-china.cc/uploads/allimg/201709/ff578ce73b8844c1.jpg?h=190" alt="人生密密缝" src="http://gif-china.cc/uploads/allimg/201709/ff578ce73b8844c1.jpg?h=190" style="display: inline;">
-          <span>高清</span></a>
-      </div>
-      <div class="cts_ms">
-        <p class="title">
-          <a href="/btdy/dy11459.html" title="人生密密缝" target="_blank">人生密密缝</a>
-          <span>8.4</span></p>
-        <p class="des">2017年 日本 剧情,同性,家庭</p></div>
-    </li>
-    <li>
-      <div class="liimg">
-        <a class="pic_link" href="/btdy/dy11457.html" title="丘吉尔" target="_blank">
-          <img class="lazy" data-src="http://gif-china.cc/uploads/allimg/201709/c061aa7821ecf502.jpg?h=190" alt="丘吉尔" src="http://gif-china.cc/uploads/allimg/201709/c061aa7821ecf502.jpg?h=190" style="display: inline;">
-          <span>高清</span></a>
-      </div>
-      <div class="cts_ms">
-        <p class="title">
-          <a href="/btdy/dy11457.html" title="丘吉尔" target="_blank">丘吉尔</a>
-          <span>6.9</span></p>
-        <p class="des">2017年 欧美 剧情,惊悚,传记</p></div>
-    </li>
-    <li>
-      <div class="liimg">
-        <a class="pic_link" href="/btdy/dy11454.html" title="疯狂之家" target="_blank">
-          <img class="lazy" data-src="http://gif-china.cc/uploads/allimg/201709/7ac0c244eb04ca9a.jpg?h=190" alt="疯狂之家" src="http://gif-china.cc/uploads/allimg/201709/7ac0c244eb04ca9a.jpg?h=190" style="display: inline;">
-          <span>标清</span></a>
-      </div>
-      <div class="cts_ms">
-        <p class="title">
-          <a href="/btdy/dy11454.html" title="疯狂之家" target="_blank">疯狂之家</a>
-          <span>5.6</span></p>
-        <p class="des">2017年 欧美 喜剧</p></div>
-    </li>
-    <li>
-      <div class="liimg">
-        <a class="pic_link" href="/btdy/dy11453.html" title="极盗车神" target="_blank">
-          <img class="lazy" data-src="http://gif-china.cc/uploads/allimg/201709/f19e048f93478490.jpg?h=190" alt="极盗车神" src="http://gif-china.cc/uploads/allimg/201709/f19e048f93478490.jpg?h=190" style="display: inline;">
-          <span>高清</span></a>
-      </div>
-      <div class="cts_ms">
-        <p class="title">
-          <a href="/btdy/dy11453.html" title="极盗车神" target="_blank">极盗车神</a>
-          <span>7.8</span></p>
-        <p class="des">2017年 欧美 动作,犯罪,音乐</p></div>
-    </li>
-    <li>
-      <div class="liimg">
-        <a class="pic_link" href="/btdy/dy11451.html" title="相棒剧场版4" target="_blank">
-          <img class="lazy" data-src="http://gif-china.cc/uploads/allimg/201709/0c89edd1c443bc27.jpg?h=190" alt="相棒剧场版4" src="http://gif-china.cc/uploads/allimg/201709/0c89edd1c443bc27.jpg?h=190" style="display: inline;">
-          <span>高清</span></a>
-      </div>
-      <div class="cts_ms">
-        <p class="title">
-          <a href="/btdy/dy11451.html" title="相棒剧场版4" target="_blank">相棒剧场版4</a>
-          <span>6.6</span></p>
-        <p class="des">2017年 日本 剧情,悬疑</p></div>
-    </li>
+  <?php 
+  $str = '';
+  foreach ($models as $model) {
+      $str .= '<li>';
+      $str .= '<div class="liimg">';
+      $str .= "<a class='pic_link' href='".Url::to(['screen/view', 'id' => $model->id])."' title='$model->name' target='_blank'>";
+      $str .= "<img class='lazy' data-src='$model->list_pic' alt='$model->name' src='$model->list_pic' style='display: inline;'>";
+      $str .= "<span>$model->quality</span></a>";
+      $str .= "</div>";
+      $str .= "<div class='cts_ms'>";
+      $str .= "<p class='title'>";
+      $str .= "<a href='".Url::to(['screen/view', 'id' => $model->id])."' title='$model->name' target='_blank'>$model->name</a>";
+      $str .= "<span>8.1</span></p>";
+      $str .= "<p class='des'>$model->play_time $model->location $model->category</p></div>";
+      $str .= "</li>";
+  }
+  echo $str;
+  
+  ?>
   </ul>
 </div>
+<?php 
+// 显示分页
+echo LinkPager::widget([
+    'options' => ['class' => 'pages'],
+    'pagination' => $pagination,
+    'firstPageLabel' => '首页',
+    'prevPageLabel' => '《',
+    'nextPageLabel' => '》',
+    'lastPageLabel' => '尾页',
+]);
+?>
 <div class="pages">
-  <a href="1--2017---time-1.html">首页</a>
-  <a href="1--2017---time-1.html">上一页</a>
-  <a href="1--2017---time-1.html">1</a>
-  <em>2</em>
-  <a href="1--2017---time-3.html">3</a>
-  <a href="1--2017---time-4.html">4</a>
-  <a href="1--2017---time-5.html">5</a>
-  <a href="1--2017---time-6.html">6</a>
-  <a href="1--2017---time-7.html">7</a>
-  <a href="1--2017---time-8.html">8</a>
-  <a href="1--2017---time-3.html">下一页</a>
-  <a href="1--2017---time-14.html">尾页</a></div>
 

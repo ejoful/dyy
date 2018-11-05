@@ -3,10 +3,11 @@ return [
     'components' => [
         'db' => [
             'class' => 'yii\db\Connection',
-            'dsn' => 'mysql:host=localhost;dbname=btbtdy1',
+            'dsn' => 'mysql:host=localhost;dbname=btbtdy',
             'username' => 'root',
             'password' => 'moon',
             'charset' => 'utf8',
+            'tablePrefix' => 'tbl_',
         ],
         'mailer' => [
             'class' => 'yii\swiftmailer\Mailer',

@@ -115,7 +115,7 @@ AppAsset::register($this);
               <i class="s02"></i>
               <a href="http://www.btbtdy.com/reg.php">注册</a></div>
           </span>
-          <script>member()</script></div>
+          <script>/*member()*/</script></div>
       </div>
 </div>
 
@@ -132,7 +132,7 @@ AppAsset::register($this);
           <img alt="我有话说" title="我有话说" class="adid_icon" src="/statics/images/icon_say.png"></a>
       </div>
       <div class="asid_share_box relative">
-        <a href="http://www.btbtdy.com/help.html">
+        <a href="http://www.btbtdymember.com/help.html">
           <img alt="新手帮助" title="新版帮助" class="adid_icon" src="/statics/images/icon_help.png"></a>
       </div>
       <div class="asid_share_box relative" style="display: block;">
@@ -159,14 +159,6 @@ AppAsset::register($this);
         <br></div></div>
     <script type="text/javascript" src="/statics/js/v1(3)"></script>
     <script type="text/javascript" src="/statics/js/v1(4)"></script>
-    <!-- 统计代码 开始 -->
-    <script>var _hmt = _hmt || []; (function() {
-        var hm = document.createElement("script");
-        hm.src = "https://hm.baidu.com/hm.js?99249fb41a838398a3cc1c3ad2258fe7";
-        var s = document.getElementsByTagName("script")[0];
-        s.parentNode.insertBefore(hm, s);
-      })();</script>
-    <!-- 统计代码 结束 -->
     <script type="text/javascript" src="/statics/js/v1(5)"></script>
     <script type="text/javascript">var params = {
         "XOffset": 0,
@@ -192,7 +184,6 @@ AppAsset::register($this);
         return false;
         return false;
       }</script>
-    <iframe class="bdSug_sd" style="display: none; position: absolute; border-width: 0px;" src="./BT电影天堂-迅雷BT种子下载_高清电影下载_files/saved_resource.html"></iframe>
     <div id="bdSug_1" class="bdSug_wpr" style="display: none;"></div>
     <script type="text/javascript">$(".cts").slide({
         effect: "fold",

@@ -37,6 +37,9 @@ AppAsset::register($this);
     ]);
     $menuItems = [
         ['label' => 'Home', 'url' => ['/site/index']],
+        ['label' => '电影', 'url' => ['/film/index']],
+        ['label' => '视频类型', 'url' => ['/film-type/index']],
+        ['label' => '下载链接', 'url' => ['/download/index']],
     ];
     if (Yii::$app->user->isGuest) {
         $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
