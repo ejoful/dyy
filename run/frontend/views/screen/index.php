@@ -5,17 +5,17 @@ use yii\widgets\LinkPager;
 /* @var $this yii\web\View */
 
 $this->title = 'BT电影天堂-迅雷BT种子下载|高清电影下载';
-echo $query_str = Yii::$app->getRequest()->queryString;
-$params = explode('&', $query_str);
-// print_r($params);
-
-
+$query_str = Yii::$app->getRequest()->queryString;
 parse_str($query_str, $query_arr);
-// echo '<pre>';
-// // print_r($query_arr);
-// echo '</pre>';
-// print_r($query_arr['FilmSearch']["'category'"]);
-// die();
+
+$params = [
+    'type' => '',
+    'category' => '',
+    'play_time' => '',
+    'location' => '',
+    'language' => '',
+];
+$params = array_merge($params, $query_arr);
 ?>
 
 <div class="list">
@@ -23,53 +23,62 @@ parse_str($query_str, $query_arr);
     <dl>
       <dt>选择类型：</dt>
       <dd>
-        <a class="current" target="_self" href="<?= Url::to(['screen/index',"FilmSearch['type']" => '',"FilmSearch['category']" => $query_arr['FilmSearch']["'category'"]]) ?>">全部</a>
-        <a target="_self" href="<?= Url::to(['screen/index',"FilmSearch['type']" => '电影',"FilmSearch['category']" => $query_arr['FilmSearch']["'category'"]]) ?>">电影</a>
-        <a target="_self" href="/screen/30--2017---time-1.html">电视剧</a>
-        <a target="_self" href="/screen/34--2017---time-1.html">动漫</a>
-        <a target="_self" href="/screen/29--2017---time-1.html">蓝光原盘</a>
-        <a target="_self" href="/screen/28--2017---time-1.html">3D电影</a>
-        <a target="_self" href="/screen/38--2017---time-1.html">VR视频</a></dd>
+      <?php 
+      $type_str = '';
+      foreach ($type_models as $film_type) {
+          $url = Url::to(['screen/index',
+              'type' => $film_type->value,
+              'category' => $params['category'],
+              'play_time' => $params['play_time'],
+              'location' => $params['location'],
+              'language' => $params['language'],
+              
+          ]);
+          if (strcmp($params['type'],$film_type->value) == 0) {
+              $type_str .= "<a class='current' target='_self' href='$url'>$film_type->name</a>";
+          } else {
+              $type_str .= "<a target='_self' href='$url'>$film_type->name</a>";
+          }
+      }
+      echo $type_str;
+      ?>
+      </dd>
     </dl>
     <dl>
       <dt>选择分类：</dt>
       <dd>
-        <a class="current" target="_self" href="/screen/1--2017---time-1.html">全部</a>
-        <a target="_self" href="/screen/1-%E5%8A%A8%E4%BD%9C-2017---time-1.html">动作</a>
-        <a target="_self" href="/screen/1-%E7%A7%91%E5%B9%BB-2017---time-1.html">科幻</a>
-        <a target="_self" href="/screen/1-%E5%96%9C%E5%89%A7-2017---time-1.html">喜剧</a>
-        <a target="_self" href="/screen/1-%E7%88%B1%E6%83%85-2017---time-1.html">爱情</a>
-        <a target="_self" href="/screen/1-%E5%89%A7%E6%83%85-2017---time-1.html">剧情</a>
-        <a target="_self" href="/screen/1-%E5%A5%87%E5%B9%BB-2017---time-1.html">奇幻</a>
-        <a target="_self" href="/screen/1-%E5%8A%A8%E7%94%BB-2017---time-1.html">动画</a>
-        <a target="_self" href="/screen/1-%E6%83%8A%E6%82%9A-2017---time-1.html">惊悚</a>
-        <a target="_self" href="/screen/1-%E6%81%90%E6%80%96-2017---time-1.html">恐怖</a>
-        <a target="_self" href="/screen/1-%E6%82%AC%E7%96%91-2017---time-1.html">悬疑</a>
-        <a target="_self" href="/screen/1-%E7%8A%AF%E7%BD%AA-2017---time-1.html">犯罪</a>
-        <a target="_self" href="/screen/1-%E6%88%98%E4%BA%89-2017---time-1.html">战争</a>
-        <a target="_self" href="/screen/1-%E5%86%92%E9%99%A9-2017---time-1.html">冒险</a>
-        <a target="_self" href="/screen/1-%E8%A5%BF%E9%83%A8-2017---time-1.html">西部</a>
-        <a target="_self" href="/screen/1-%E7%81%BE%E9%9A%BE-2017---time-1.html">灾难</a>
-        <a target="_self" href="/screen/1-%E6%AD%A6%E4%BE%A0-2017---time-1.html">武侠</a>
-        <a target="_self" href="/screen/1-%E5%8F%A4%E8%A3%85-2017---time-1.html">古装</a>
-        <a target="_self" href="/screen/1-%E8%B0%8D%E6%88%98-2017---time-1.html">谍战</a>
-        <a target="_self" href="/screen/1-%E4%BC%A0%E8%AE%B0-2017---time-1.html">传记</a>
-        <a target="_self" href="/screen/1-%E5%8E%86%E5%8F%B2-2017---time-1.html">历史</a>
-        <a target="_self" href="/screen/1-%E7%BA%AA%E5%BD%95-2017---time-1.html">纪录</a>
-        <a target="_self" href="/screen/1-%E5%90%8C%E6%80%A7-2017---time-1.html">同性</a>
-        <a target="_self" href="/screen/1-%E9%9F%B3%E4%B9%90-2017---time-1.html">音乐</a>
-        <a target="_self" href="/screen/1-%E6%AD%8C%E8%88%9E-2017---time-1.html">歌舞</a>
-        <a target="_self" href="/screen/1-%E9%9D%92%E6%98%A5-2017---time-1.html">青春</a>
-        <a target="_self" href="/screen/1-%E5%AE%B6%E5%BA%AD-2017---time-1.html">家庭</a>
-        <a target="_self" href="/screen/1-%E5%84%BF%E7%AB%A5-2017---time-1.html">儿童</a>
-        <a target="_self" href="/screen/1-%E6%A0%A1%E5%9B%AD-2017---time-1.html">校园</a>
-        <a target="_self" href="/screen/1-%E5%8A%B1%E5%BF%97-2017---time-1.html">励志</a>
-        <a target="_self" href="/screen/1-%E8%BF%90%E5%8A%A8-2017---time-1.html">运动</a>
-        <a target="_self" href="/screen/1-%E4%BD%93%E8%82%B2-2017---time-1.html">体育</a>
-        <a target="_self" href="/screen/1-%E7%9F%AD%E7%89%87-2017---time-1.html">短片</a>
-        <a target="_self" href="/screen/1-%E7%9C%9F%E4%BA%BA%E7%A7%80-2017---time-1.html">真人秀</a>
-        <a target="_self" href="/screen/1-%E9%BB%91%E8%89%B2%E7%94%B5%E5%BD%B1-2017---time-1.html">黑色电影</a>
-        <a target="_self" href="/screen/1-%E8%84%B1%E5%8F%A3%E7%A7%80-2017---time-1.html">脱口秀</a></dd>
+      <?php 
+      $url = Url::to(['screen/index',
+          'type' => $params['type'],
+          'category' => '',
+          'play_time' => $params['play_time'],
+          'location' => $params['location'],
+          'language' => $params['language'],
+      
+      ]);
+        if (strcmp($params['category'],'') == 0) {
+              $category_str = "<a class='current' target='_self' href='$url'>全部</a>";
+          } else {
+              $category_str = "<a target='_self' href='$url'>全部</a>";
+          }
+      foreach ($category_arr as $category) {
+          $url = Url::to(['screen/index',
+              'type' => $params['type'],
+              'category' => $category,
+              'play_time' => $params['play_time'],
+              'location' => $params['location'],
+              'language' => $params['language'],
+              
+          ]);
+          if (strcmp($params['category'],$category) == 0) {
+              $category_str .= "<a class='current' target='_self' href='$url'>$category</a>";
+          } else {
+              $category_str .= "<a target='_self' href='$url'>$category</a>";
+          }
+      }
+      echo $category_str;
+      ?>
+      </dd>
     </dl>
     <dl>
       <dt>选择年代：</dt>
