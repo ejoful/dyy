@@ -17,6 +17,7 @@ $params = [
 ];
 $params = array_merge($params, $query_arr);
 ?>
+
 <div class="list">
   <div class="s_index">
     <dl>
@@ -293,3 +294,5 @@ echo LinkPager::widget([
     'lastPageLabel' => '尾页',
 ]);
 ?>
+<div class="pages">
+

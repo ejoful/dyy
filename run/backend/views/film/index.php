@@ -45,7 +45,7 @@ $this->params['breadcrumbs'][] = $this->title;
             // 'short_video_url:url',
             // 'short_video_embed:ntext',
             // 'subtitle',
-            // 'score',
+            'score',
             // 'url:url',
 
             ['class' => 'yii\grid\ActionColumn'],
