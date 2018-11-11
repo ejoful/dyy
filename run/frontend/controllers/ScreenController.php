@@ -215,5 +215,28 @@ class ScreenController extends Controller
             throw new NotFoundHttpException('The requested page does not exist.');
         }
     }
+    
+    public function actionDownload($id)
+    {
+        $download_model = $this->findDownloadModel($id);
+        $film_model = $this->findModel($download_model->film_id);
+        
+        
+        return $this->render('download', [
+            'download_model' => $download_model,
+            'film_model' => $film_model,
+        ]);
+        
+        
+    }
+    
+    protected function findDownloadModel($id)
+    {
+        if (($model = Download::findOne($id)) !== null) {
+            return $model;
+        } else {
+            throw new NotFoundHttpException('The requested page does not exist.');
+        }
+    }
 
 }
