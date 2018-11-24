@@ -2,6 +2,7 @@
 
 use yii\helpers\Url;
 use common\components\Helper;
+use yii\widgets\LinkPager;
 
 
 /* @var $this yii\web\View */
@@ -31,9 +32,20 @@ $this->title = 'BT电影天堂-迅雷BT种子下载|高清电影下载';
       <p>主演：<?php foreach (explode(',', $model->star) as $value) {?>
             <a href="<?= Url::to(['screen/search', 'word' => $value]) ?>"><?= $value; ?></a>&nbsp;/&nbsp;
           <?php }?></p>
-      <p>简介：<?= Helper::truncate_utf8_string($model->descr, 200); ?></p>
+      <p>简介：<?= Helper::truncate_utf8_string($model->description, 200); ?></p>
     </dd>
   </dl>
   <?php }}?>
 </div>
-<div class="pages"><em>1</em></div>
+<?php 
+// 显示分页
+echo LinkPager::widget([
+    'options' => ['class' => 'pages'],
+    'pagination' => $pages,
+    'firstPageLabel' => '首页',
+    'prevPageLabel' => '《',
+    'nextPageLabel' => '》',
+    'lastPageLabel' => '尾页',
+]);
+?>
+

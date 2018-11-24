@@ -8,6 +8,7 @@ use yii\web\Controller;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
 use backend\models\Film;
+use yii\data\Pagination;
 
 /**
  * Site controller
@@ -68,12 +69,16 @@ class SearchController extends Controller
      */
     public function actionIndex($word)
     {
-        $models = Film::find()
+        $query = Film::find()
         ->where(['like', 'name', $word])
-        ->orWhere(['like', 'star', $word])
+        ->orWhere(['like', 'star', $word]);
+        $pages = new Pagination(['totalCount' => $query->count()]);
+        $models = $query->offset($pages->offset)
+        ->limit($pages->limit)
         ->all();
-        
-        return $this->render('index',['models' => $models, 'word' => $word]);
+        return $this->render('index',['models' => $models, 
+            'word' => $word, 
+            'pages' => $pages]);
     }
 
 }

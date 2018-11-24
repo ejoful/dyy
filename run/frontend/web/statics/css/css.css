@@ -112,7 +112,7 @@ a.head01:link,a.head01:active,a.head01:visited,a.head01:hover{margin-top:15px;ba
 .list_so {overflow:hidden; width:1200px; margin:10px auto 0; clear:both; padding-top:12px;}
 .list_so h1 {font-size:25px; margin-bottom:10px; font-weight:500;background:#FFF;padding:10px 15px;}
 .list_so dl {height:200px;margin-bottom:15px;background:#FFF;padding:10px;position:relative;}
-.list_so dd {padding-left:25px;font-size:14px;width:900px;}
+.list_so dd {padding-left:25px;font-size:14px;line-height: normal;width: 900px;height: 200px;}
 .list_so dd p { margin:0 0 8px;}
 .list_so dd a {color:#337ab7;}
 .list_so dd span {border:1px solid #DDD;background:#f5f5f5;border-radius:3px;padding:2px 8px;margin-left:10px;font-size:13px;}
