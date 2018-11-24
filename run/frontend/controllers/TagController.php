@@ -7,6 +7,8 @@ use yii\web\BadRequestHttpException;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
+use backend\models\Film;
+use backend\models\Topiclist;
 
 /**
  * Site controller
@@ -65,9 +67,23 @@ class TagController extends Controller
      *
      * @return mixed
      */
-    public function actionNew()
+    public function actionNew($type=null)
     {
-        return $this->render('new');
+        if (empty($type)) {
+            $new_models = Film::find()
+            ->orderBy('update_time desc')
+            ->limit(100)
+            ->all();
+            $type = '榜首页';
+        } else {
+            $new_models = Film::find()
+            ->where(['type' => $type])
+            ->orderBy('update_time desc')
+            ->limit(100)
+            ->all();
+        }
+        
+        return $this->render('new', ['new_models' => $new_models, 'type' => $type]);
     }
     
     public function actionHot()
@@ -82,7 +98,8 @@ class TagController extends Controller
     
     public function actionTopic()
     {
-        return $this->render('topic');
+        $topiclist_model = Topiclist::find()->all();
+        return $this->render('topic',['topiclist_model' => $topiclist_model]);
     }
     
     public function actionYun()

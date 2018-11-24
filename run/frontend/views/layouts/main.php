@@ -54,7 +54,7 @@ AppAsset::register($this);
           <h1>
             <a href="http://www.btbtdy.com/" title="BT电影天堂-迅雷BT种子下载|高清电影下载" class="head01 lf">BT电影天堂</a></h1>
           <div class="lf head_so">
-            <form id="formsearch" method="get" action="http://www.btbtdy.com/s.php" autocomplete="off" class="searchform">
+            <form id="formsearch" method="get" action="<?= Url::to(['search/index']) ?>" autocomplete="off" class="searchform">
               <input class="searchinput lf" type="text" id="keyword" name="word" placeholder="请输入关键词" value="" autocomplete="off">
               <input id="searchbtn" type="submit" value="搜索" class="searchbtn lf"></form>
           </div>
@@ -82,39 +82,20 @@ AppAsset::register($this);
             <li>
               <a href="/">首页</a></li>
             <li>
-              <a href="<?= Url::to(['screen/index']) ?>">电影</a></li>
+              <a href="<?= Url::to(['screen/index', 'type'=>'电影']) ?>">电影</a></li>
             <li>
-              <a href="http://www.btbtdy.com/btfl/dy30.html">电视剧</a></li>
+              <a href="<?= Url::to(['screen/index', 'type'=>'电视剧']) ?>">电视剧</a></li>
             <li>
-              <a href="http://www.btbtdy.com/btfl/dy34.html">动漫</a></li>
+              <a href="<?= Url::to(['screen/index', 'type'=>'动漫']) ?>">动漫</a></li>
             <li>
-              <a href="http://www.btbtdy.com/btfl/dy29.html">蓝光原盘</a></li>
+              <a href="<?= Url::to(['screen/index', 'type'=>'蓝光原盘']) ?>">蓝光原盘</a></li>
             <li>
-              <a href="http://www.btbtdy.com/btfl/dy28.html">3D电影</a></li>
+              <a href="<?= Url::to(['screen/index', 'type'=>'3D电影']) ?>">3D电影</a></li>
             <li>
               <a href="<?= Url::to(['tag/new']) ?>">最新</a></li>
             <li>
-              <a href="<?= Url::to(['tag/hot']) ?>">排行</a></li>
-            <li>
-              <a href="http://www.btbtdy.com/previews.html#today">更新表</a></li>
-            <li>
               <a href="<?= Url::to(['tag/topic']) ?>">专题</a></li>
-            <li>
-              <a href="<?= Url::to(['tag/yun']) ?>">云点播</a></li>
-            <li>
-              <a href="http://www.btbtdy.com/#" class="big-link" data-reveal-id="myModal" data-animation="none">备用域名</a></li>
-            <li id="ad">
-              <a href="http://www.btbtdy.com/#">广告设置</a>
-              <ul id="ads">
-                <i class="s01"></i>
-                <li id="close_btn2">开启广告</li>您已成功关闭本站广告</ul></li>
           </ul>
-          <span id="seacms_member">
-            <div class="login">
-              <a href="http://www.btbtdy.com/login.php" style="margin-right:10px;">登录</a>
-              <i class="s02"></i>
-              <a href="http://www.btbtdy.com/reg.php">注册</a></div>
-          </span>
           <script>/*member()*/</script></div>
       </div>
 </div>

@@ -7,6 +7,7 @@ use yii\web\BadRequestHttpException;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
+use backend\models\Film;
 
 /**
  * Site controller
@@ -65,9 +66,14 @@ class SearchController extends Controller
      *
      * @return mixed
      */
-    public function actionIndex($text)
+    public function actionIndex($word)
     {
-        return $this->render('index');
+        $models = Film::find()
+        ->where(['like', 'name', $word])
+        ->orWhere(['like', 'star', $word])
+        ->all();
+        
+        return $this->render('index',['models' => $models, 'word' => $word]);
     }
 
 }

@@ -220,11 +220,13 @@ class ScreenController extends Controller
     {
         $download_model = $this->findDownloadModel($id);
         $film_model = $this->findModel($download_model->film_id);
+        $download_models = $this->findDownloadModels($download_model->film_id);
         
         
         return $this->render('download', [
             'download_model' => $download_model,
             'film_model' => $film_model,
+            'download_models' => $download_models,
         ]);
         
         
@@ -233,6 +235,15 @@ class ScreenController extends Controller
     protected function findDownloadModel($id)
     {
         if (($model = Download::findOne($id)) !== null) {
+            return $model;
+        } else {
+            throw new NotFoundHttpException('The requested page does not exist.');
+        }
+    }
+    
+    protected function findDownloadModels($id)
+    {
+        if (($model = Download::findAll(['film_id'=>$id])) !== null) {
             return $model;
         } else {
             throw new NotFoundHttpException('The requested page does not exist.');
